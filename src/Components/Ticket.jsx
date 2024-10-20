@@ -17,12 +17,12 @@ function Ticket({value,display,ticketRef}) {
             <div className='w-[240px]  flex flex-col justify-center  gap-4 p-6 rounded-tl-2xl rounded-bl-2xl h-full  bg-[#EBF6F2]'>
                 <div>
                     <h1 className='text-[26px] font-semibold'>{value?.departure_time}</h1>
-                    <span className='text-[12px] font-medium opacity-[50%] mt-2'>Newark(EWR)</span>
+                    <span className='text-[12px] font-medium opacity-[50%] mt-2'>Karachi(PKR)</span>
                 </div>
                 <img src={travel} alt="" className='h-20 w-[36px]' />
                 <div>
                     <h1 className='text-[26px] font-semibold'>{value?.arrival_time}</h1>
-                    <span className='text-[12px] font-medium opacity-[50%] mt-2'>Newark(EWR)</span>
+                    <span className='text-[12px] font-medium opacity-[50%] mt-2'>Islamabad(PKR)</span>
                 </div>
             </div>
 
