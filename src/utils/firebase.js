@@ -1,15 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore , collection , addDoc , getDocs, writeBatch , doc } from "firebase/firestore";
 import flightDetails from '../utils/Flights'
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBHp_mJ3oNLRcGyzx-Eh5BVDS7wnTB3Ml8",
   authDomain: "golobe-travel-agency-425cc.firebaseapp.com",
@@ -25,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app)
 const auth = getAuth(app)
+const provider = new GoogleAuthProvider();
 
 // console.log("flight details" , flightDetails);
 
@@ -42,8 +38,8 @@ export {
     // collection,
     flightDetails,
     doc,
-    auth
-
+    auth,
+    provider
 }
 
 

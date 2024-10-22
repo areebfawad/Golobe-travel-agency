@@ -5,7 +5,7 @@ import { db } from '../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
-function SignupForm() {
+function SignupForm({handleGoogleSignIn}) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setlastName] = useState('')
     const [Email, setEmail] = useState('')
@@ -59,6 +59,7 @@ function SignupForm() {
       };
 
     return (
+        <>
         <form action="" onSubmit={handleSignupForm}>
             <div className='mt-10'>
                 <h1 className='text-[36px] font-bold text-[#000000]'>Sign up</h1>
@@ -127,9 +128,19 @@ function SignupForm() {
 
                 </fieldset>
 
-                <input type="submit" id='signupsubmit' value={loading ? 'Sign in...' : 'Create Account'} className='h-[50px] cursor-pointer rounded mt-5 w-[600px] bg-[#8DD3BB] font-semibold' />
+                <input type="submit" id='signupsubmit' value={loading ? 'Sign in...' : 'Create Account'} 
+                className='h-[50px] cursor-pointer rounded mt-5 w-[600px] bg-[#8DD3BB] font-semibold' />
+               
             </div>
         </form>
+        <button 
+            onClick={handleGoogleSignIn} 
+            className='h-[50px] cursor-pointer rounded mt-5 w-[600px] bg-[#8DD3BB] font-semibold'>
+            Continue with Google
+            </button>
+        </>
+
+
 
     )
 }
